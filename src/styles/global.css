@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "/fira-go.css";
+
+html, body {
+  font-size: 17px !important;
+  font-family: 'Open Sans';
+}
+
+@media print {
+  @page {
+    size: 210mm 297mm;
+    margin-top: 2in !important;
+    margin-bottom: 0in;
+    margin-left: 0in;
+    margin-right: 0in;
+  }
+  html, body {
+    font-size: 9px !important; /* Set your desired font size for printing */
+  }
+
+  body {
+    padding-top: 15mm;
+  }
+}
+

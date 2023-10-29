@@ -1,193 +1,209 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import {
+  Card,
+  Section,
+  Quote,
+  Layout,
+  Contact,
+  Link,
+  Subheading,
+  Tags,
+  EmploymentCertificate
+} from '../components/CvComponents'
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+    <main>
+      <Layout>
+        <div className='flex flex-col justify-between mt-7 mb-5'>
+          <h1 className='flex text-5xl sm:text-4xl font-weight-600 mb-0 text-gray-550 overflow-hidden'>Arttu Mäkinen</h1>
+          <Quote>
+            <Contact lines='+358451146892 | arttu.b.makinen@student.jyu.fi' textStyles='text-gray-600'/>
+            <Link text='LinkedIn' url='https://www.linkedin.com/in/arttu-m%C3%A4kinen-567b75150'/>
+          </Quote>
+        </div>
+        <p className='mb-5' />
+        <Section title='ABOUT ME'>
+          <Card title='Fullstack Developer'>
+            I can turn an idea into a finished product through UI/UX design,
+            frontend and backend development.
+          </Card>
+          <Card title='Game Developer'>
+            <Subheading text='Since 2013'/>
+            I've been a game dev hobbyist since lower secondary.
+          </Card>
+          <Card title='Coding Teacher'>
+            <Subheading text='Since 2018'/>
+            I'm passionate about teaching coding and game development
+            to elementary school kids.
+          </Card>
+        </Section>
+
+        <Section title='EXPERIENCE'>
+          <Card title='Nokia' titleUrl='https://nokia.com'>
+            <Subheading text='Jun 2023 – Aug 2023 | Software Developer Trainee'/>
+            Software development at Nokia Digital Automation Cloud
+            <Quote>
+              "Arttu has performed his duties with excellent working skills and excellent behaviour. Arttu has strong software development background and he was implementing new features to the automation platform very quickly, also refactoring existing software code base extremely professionally."
+              <br/> => <Link text='employment certificate' url='https://drive.google.com/file/d/1OdM3KAHauqAikynoM_psd3tPKsvpWo5j/view?usp=sharing' />
+            </Quote>
+            <Tags tags='Node.js, Docker, Docker Compose, Linux backend' />
+          </Card>
+          <Card title='Nodeon' titleUrl='https://nodeon.com'>
+
+            <Subheading text='Jun 2022 – Dec 2022 | Software Designer Trainee'/>
+            Backend development, programmed and deployed an internal analytics service.
+            <Quote>
+              "During the internship, Arttu demonstrated ability to quickly learn new technologies and apply them in software development."
+              <br/> => <Link text='employment certificate' url='https://drive.google.com/file/d/17Ho6tLXC6Q-6zToNr4NwtFlRcyIbRi-G/view?usp=sharing' />
+            </Quote>
+
+            <Tags tags='C#, .NET, Azure App Service, Entity Framework Core, SQL Server' />
+          </Card>
+          <Card title='Jyväskylän Normaalikoulu' titleUrl='https://www.norssi.jyu.fi/'>
+            {/* <EmploymentCertificate url='https://drive.google.com/file/d/1iE1R9C8ek1pvReBzZwJ9yUUNwzkaeTM5/view?usp=sharing' /> */}
+            <Subheading text='Aug 2022 – June 2023 | non-military-service'/>
+            Taugh first-graders as a teacher assistant, held 75 coding lessons and developed free coding learning materials for primary schools.
+            Updated / redesigned the school website (Plone CMS)
+
+            <Quote>
+            "Arttu executed all the agreed-upon tasks with a high level of quality, responsibility and diligence. He quicky adapted to the work team and had a really good work ethic."
+              <br/>=> <Link url='https://drive.google.com/file/d/1iE1R9C8ek1pvReBzZwJ9yUUNwzkaeTM5/view?usp=share_link' text='employment certificate' />
+            </Quote>
+          </Card>
+          <Card title='Kodarit' titleUrl='https://kodarit.com/fi/'>
+            <EmploymentCertificate url='https://drive.google.com/file/d/1NcyLzXtSzgOmPaEAF5tntL83dSCMHMQJ/view' />
+            <Subheading text='Jun 2018 – Jan 2021 | Coding Teacher '/>
+            Taught elementary school children to code and develop video games.
+            Held 320 coding lessons, consisting of weekly lessons, summer camps
+            and event workshops. Developed learning materials for other teachers
+            and made an interactive learning environment for teaching programming
+            concepts. Expanded business operations to Jyväskylä and recruited
+            two new employees.
+          </Card>
+          <Card title='Valmet' titleUrl='https://www.valmet.com/'>
+            <Subheading text='Jun 2016, 2 weeks | Summer trainee'/>
+            "Excel macros (had to fix Visual Basic spaghetti code of self taught
+            engineers...), updating software for worksite laptops."
+            <Quote>
+              Arttu performed the assigned tasks conscientiously and with a hardworking attitude. His initiative and work skills were commendable.
+              <br /> => <Link text='employment certificate' url='https://drive.google.com/file/d/1e7t0UAXmOHWbVpH7Hr2nZ5-HOYcii_X4/view?usp=sharing' />
+            </Quote>
+          </Card>
+        </Section>
+        <Section title='EDUCATION'>
+          <Card title='University of Jyväskylä'>
+            <Subheading text='2019 – | Information Technology'/>
+          </Card>
+          <Card title='Fullstack Open MOOC, 22 ECTS'>
+            <Subheading text='2021 | Helsinki University MOOC'/>
+            <EmploymentCertificate text='certificate' url='https://drive.google.com/file/d/1UGmD-MmGU9vSxfY6e7Bl8eBcEknSL4Ct/view?usp=sharing' />
+            Almost a Finnish minor study (25 ECTS) worth of Fullstack studies.
+            <Tags tags='Node.js, React (Native), Redux, TypeScript, Express, GraphQL, MongoDB/Apollo, Jest, Cypress' />
+          </Card>
+          <Card title='Tampereen yhteiskoulun lukio'>
+            <Subheading text='2015 – 2018 | Ylioppilastutkinto'/>
+            <Link text='päättötodistus' url='https://drive.google.com/file/d/1dcNWQ-jc6nWdyjEjQ0CSaAfFFtbdRHxg/view?usp=sharing' />
+            {', '}
+            <Link text='yo-todistus' url='https://drive.google.com/file/d/1dc9vsx4R6X_aCUVfZz_t5BrJZRx7CyWU/view?usp=sharing' />
+          </Card>
+        </Section>
+        <Section title='MAIN PROJECTS'>
+          <Card title='Cosmos.md'>
+            <EmploymentCertificate text='Source code' url='https://github.com/ignon/cosmos.md'/>
+            <Subheading text='2022 | Node, React, Apollo-Express, GraphQL, MongoDB' />
+              Cloud-based wiki / hypertext note editor with both front-
+              and backend implementation. Developed with zero external assistance.
+              Final assigment for Fullstack Open course.
+
+              (The deployment is currently down because Heroku closed their free
+              tier and I haven't had time to migrate to another service)
+
+              <Quote>
+                A useful and well implemented app! The UI is user-friendly
+                and there were no usability-impairing bugs or large usability problems.
+                The code is sensibly organized in all respects and quite good quality.
+                <br/> => <Link text='the assigment review' url='https://github.com/ignon/cosmos.md/issues/1' /> by the course teacher
+              </Quote>
+          </Card>
+          <Card title='Koodimatskut.fi' titleUrl='https://koodimatskut.fi'>
+              <EmploymentCertificate text='Source code' url='https://github.com/ignon/koodimatskut'/>
+              <Subheading text='2023 | Typescript, React, Gatsby.js, Tailwind' />
+                A carefully curated and arrenged list of high-quality coding learning
+                materials for primary schools (in Finnish).
+
+                Powered by Gatsby.js, a static site generator which allows for querying
+                local markdown files with GraphQL, then passing them as props to React
+                components.
+            </Card>
+            <Card title='Loops' titleUrl='https://ignon.github.io/loops/'>
+              <Subheading text='2019 | Javascript, HTML, p5.js'/>
+              <EmploymentCertificate text='Source code' url='https://github.com/ignon/loops'/>
+              An interactive environment for teaching while- and for loops in Javascript. Coded before university, source code isn't beautiful.
+            </Card>
+            <Card title='Notechad++' titleUrl='https://github.com/ignon/notechad'>
+              <Subheading text='2019 | Ohjelmointi 1, C#' />
+              A command-line note management tool with regex parsing. Made with test driven development.
+            </Card>
+        </Section>
+        <Section title='SKILLS'>
+          <Card title='JavaScript'>
+            <p className='mb-3'>
+            Unit-testing (Jest), E2E-testing (Cypress),
+            continous integration and deployment (Github Actions), writing REST API:s (Express)
+            and GraphQL API:s (Apollo).
+            </p>
+
+            <p className='mb-3'>
+            I have a skill of designing simple, yet pleasant user interfaces
+            (React, Tailwind) and making them interactive with state-management (Redux, custom hooks etc).
+            </p>
+
+            {/* <p className='mb-3'> I have an interest in data visualization and HTML5-canvas game development (d3.js, p5.js, Pixi.js) </p> */}
+
+            <Tags tags='Node.js, React (Native), Redux, TypeScript, Express, GraphQL, MongoDB/Apollo, Jest, Cypress, GatsbyJS, Tailwind CSS' />
+          </Card>
+          <Card title='.NET / C#'>
+            <Tags tags='C#, .NET, Azure App Service, Azure Virtual Networks, Azure Key Vault, Entity Framework Core, SQL Server, Akka.NET' />
+          </Card>
+          <Card title='DevOps and Development Tools'>
+            <Tags tags='Git, GitHub Actions, CI/CD, Docker, Docker Compose' />
+          </Card>
+          <Card title='Linux'>
+            I use Linux, Neovim, SSH, Tmux, i3wm and Vimium on daily basis because they boost my productivity by providing a faster way to get things done, navigate code projects, file systems and internet.
+            <Tags tags='Linux, Vim/Neovim, SSH, Tmux, i3wm, Shell/Bash' />
+          </Card>
+          <Card title='Other'>
+            <Tags tags='Swagger / OpenAPI, Regex, FTP, HTML, CSS, Java, Netlify, Posthog' />
+          </Card>
+        </Section>
+        <Section title='CONTACT'>
+          <Card>
+            <Contact lines='Arttu Mäkinen | Jyväskylä, Finland | arttu.b.makinen@student.jyu.fi | 0451146892' />
+            <Link text='LinkedIn' url='https://www.linkedin.com/in/arttu-m%C3%A4kinen-567b75150' />
+          </Card>
+        </Section>
+        <Section title='REFEREES'>
+          <Card>
+            <Contact lines='Jari Uusinoka | Head of Network Services | Nokia Digital Automation Cloud | 0405137768' />
+            <Link text='LinkedIn' url='https://www.linkedin.com/in/jari-uusinoka-11982a7/' />
+          </Card>
+          {/* <Card> */}
+          {/*   <Contact lines='Lari Väänänen | Planning Manager | Nodeon | 0505750773' /> */}
+          {/*   <Link text='LinkedIn' url='https://www.linkedin.com/in/lari-v%C3%A4%C3%A4n%C3%A4nen-4670b981' /> */}
+          {/* </Card> */}
+        </Section>
+      </Layout>
     </main>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => (
+  <>
+    <title>Arttu Mäkinen</title>
+  </>
+)
