@@ -13,10 +13,10 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: { "icon": "" }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: { "icon": "" }
+    // },
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
