@@ -2,6 +2,12 @@ A React / Gatsby resume heavily inspired by (I stole parts of the CSS) [Universa
 
 Is Gatsby.js overkill for a resume? Yes! But if I want to do some fancy stuff later, it might be helpful.
 
+License
+---------
+
+NonCommercial-ShareAlike 1.0 Generic (CC NC-SA 1.0)
+https://creativecommons.org/licenses/nc-sa/1.0/
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
