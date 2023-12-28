@@ -62,19 +62,17 @@ const IndexPage = () => {
 
             <Tags tags='C#, .NET, Azure App Service, Entity Framework Core, SQL Server' />
           </Card>
-          {false &&
-            <Card title='Jyväskylän Normaalikoulu' titleUrl='https://www.norssi.jyu.fi/'>
-              {/* <EmploymentCertificate url='https://drive.google.com/file/d/1iE1R9C8ek1pvReBzZwJ9yUUNwzkaeTM5/view?usp=sharing' /> */}
-              <Subheading text='Aug 2022 – June 2023 | non-military-service'/>
-              Taugh first-graders as a teacher assistant, held 75 coding lessons and developed free coding learning materials for primary schools.
-              Updated / redesigned the school website (Plone CMS)
+          <Card title='Jyväskylän Normaalikoulu' titleUrl='https://www.norssi.jyu.fi/'>
+            {/* <EmploymentCertificate url='https://drive.google.com/file/d/1iE1R9C8ek1pvReBzZwJ9yUUNwzkaeTM5/view?usp=sharing' /> */}
+            <Subheading text='Aug 2022 – June 2023 | non-military-service'/>
+            Taugh first-graders as a teacher assistant, held 75 coding lessons and developed free coding learning materials for primary schools.
+            Updated / redesigned the school website (Plone CMS)
 
-              <Quote>
-              "Arttu executed all the agreed-upon tasks with a high level of quality, responsibility and diligence. He quicky adapted to the work team and had a really good work ethic."
-                <br/>=> <Link url='https://drive.google.com/file/d/1iE1R9C8ek1pvReBzZwJ9yUUNwzkaeTM5/view?usp=share_link' text='employment certificate' />
-              </Quote>
-            </Card>
-          }
+            {/* <Quote> */}
+            {/* "Arttu executed all the agreed-upon tasks with a high level of quality, responsibility and diligence. He quicky adapted to the work team and had a really good work ethic." */}
+            {/*   <br/> <Link url='https://drive.google.com/file/d/1iE1R9C8ek1pvReBzZwJ9yUUNwzkaeTM5/view?usp=share_link' text='employment certificate' /> */}
+            {/* </Quote> */}
+          </Card>
           <Card title='Kodarit' titleUrl='https://kodarit.com/fi/'>
             <EmploymentCertificate url='https://drive.google.com/file/d/1NcyLzXtSzgOmPaEAF5tntL83dSCMHMQJ/view' />
             <Subheading text='Jun 2018 – Jan 2021 | Coding Teacher '/>
