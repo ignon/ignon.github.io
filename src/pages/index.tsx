@@ -42,6 +42,7 @@ const IndexPage = () => {
         </Section>
 
         <Education />
+        <WorkExperience />
         <Skills />
         <MainProjects />
         <Section title='CONTACT'>
