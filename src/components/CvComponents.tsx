@@ -59,7 +59,7 @@ export const Description = ({ children }: any) => (
 )
 
 export const Layout = ({ children }: any) => (
-    <div className="max-w-3xl mx-auto px-5 flex flex-col">
+  <div className="max-w-3xl print:max-w-4xl mx-auto px-5 flex flex-col">
       {children}
     </div>
 )
