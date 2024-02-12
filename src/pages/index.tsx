@@ -27,7 +27,7 @@ const IndexPage = () => {
         <p className='mb-5' />
         <Section title='ABOUT ME'>
           <Card title='Fullstack Developer'>
-            I can turn an idea into a finished product through UI/UX design,
+            I can transform an idea into a finished product by utilizing skills in UI/UX design,
             frontend and backend development.
           </Card>
           <Card title='Game Developer'>
